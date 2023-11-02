@@ -463,6 +463,7 @@ div.div-flex.dev {
     outline: none;
     border: 0.25vw solid var(--title-2-color);
     background: var(--gerador-de-senhas-1-submit-1-background-color-1);
+    user-select: none;
 }
 
 .submit_1:hover{
