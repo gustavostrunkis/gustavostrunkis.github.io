@@ -51,6 +51,11 @@ div.div-title h1 {
     font-weight: normal;
 }
 
+.title-2-1{
+    margin-bottom: var(--default-margin-bottom-1);
+    width: 100%;
+}
+
 .title-3{
     color: var(--title-1-color);
     text-align: left;
@@ -250,6 +255,37 @@ div.div-flex.dev {
     /* background: blue; */
 }
 
+.o-que-e-seguranca-digital-2{
+    flex-direction: row-reverse;
+    width: 100%;
+    /* height: 200px; */
+    justify-content: space-around;
+    align-items: center;
+
+    /* background: #E4FFFC; */
+
+    padding-top: 8%;
+}
+
+.o-que-e-seguranca-digital-2-1{
+    height: auto;
+    width: 40%;
+    padding-left: 2%;
+    padding-right: 8%;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+
+.o-que-e-seguranca-digital-2-2{
+    width: 45%;
+    padding-right: 7%;
+    /* padding-right: 5%; */
+    justify-content: left;
+    align-items: end;
+    /* background: blue; */
+}
+
 .div-img-2{
     transform: translateY(8%);
     display: flex;
@@ -265,6 +301,17 @@ div.div-flex.dev {
     width: 90.5%;
     max-width: 860px;
     transform: translate(0, -16%);
+}
+
+.div-img-3{
+    transform: translateY(8%);
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+
+    width: 100%;
+    background: linear-gradient(270deg, rgba(0, 96, 121, 1) 66.21%, rgba(0, 171, 154, 0.23) 100%);
 }
 
 .hr_1{
@@ -295,6 +342,10 @@ div.div-flex.dev {
     padding-bottom: 8%;
 }
 
+.senhas-seguras-2{
+    padding-bottom: 0%;
+}
+
 .div-title-2-1{
     width: 100%;
 }
@@ -306,8 +357,8 @@ div.div-flex.dev {
 
 .div-content-senhas-seguras-1{
     justify-content: center;
-    align-items: center;
-    /* align-items: start; */
+    /* align-items: center; */
+    align-items: stretch;
     flex-direction: row;
     width: 100%;
     gap: 10%;
@@ -324,6 +375,14 @@ div.div-flex.dev {
     /* height: auto; */
     /* min-height: 100%; */
     border-left: 2px solid var(--title-1-color);
+}
+
+.senhas-seguras-2-1{
+    width: 60%;
+}
+
+.div-content-senhas-seguras-2{
+    justify-content: left;
 }
 
 .gerador-de-senhas-1{
