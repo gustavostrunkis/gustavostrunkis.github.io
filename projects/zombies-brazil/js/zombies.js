@@ -19,8 +19,8 @@ window.onload = function () {
 }
 
 function ZombiesUI() {
-    this.mapHmax = 2160;
-    this.mapWmax = 3840;
+    this.mapHmax = 900;
+    this.mapWmax = 1500;
     this.mapH = this.mapHmax;
     this.mapW = this.mapWmax;
     this.elem = 'map';
