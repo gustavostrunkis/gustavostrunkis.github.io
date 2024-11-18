@@ -1,13 +1,15 @@
-var helptext = "\
-Welcome to Zombietown USA, a disease dynamics simulation of zombism across the USA. \
-We use Gillespie dynamics on block-level census data from 2010 using 308 \
-million people interacting across the continental US.\n\n\
+var helptext = "
 Parameters:\n\n\
 \u03B1 - kill to bite ratio\n\
 \u03BC - time for zombie to walk 1 mile\n\n\
 Controls:\n\n\
 Click on the map to place a new zombie, and use the controls on the left to \
 change parameters of the simulation. ";
+
+/*\
+Welcome to Zombietown USA, a disease dynamics simulation of zombism across the USA. \
+We use Gillespie dynamics on block-level census data from 2010 using 308 \
+million people interacting across the continental US.\n\n\*/
 
 var KEY_P = 80;
 var KEY_Q = 81;
