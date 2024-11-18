@@ -1,5 +1,4 @@
-var helptext = "
-Parameters:\n\n\
+var helptext = "Parameters:\n\n\
 \u03B1 - kill to bite ratio\n\
 \u03BC - time for zombie to walk 1 mile\n\n\
 Controls:\n\n\
