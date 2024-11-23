@@ -90,7 +90,7 @@ InfiniGraph.prototype = {
 
     fillfunc: function(d) {
         if (d.S > 0) return d3.rgb(255, 255, 255);
-        if (d.Z > 0) return d3.rgb(255, 0, 0);
+        if (d.Z > 0) return d3.rgb(0, 255, 0);
         if (d.R > 0) return d3.rgb(0, 0, 255);
     },
 };
