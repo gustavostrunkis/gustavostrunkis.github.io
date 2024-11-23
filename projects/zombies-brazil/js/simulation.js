@@ -41,6 +41,10 @@ function convert(s, sim){
     s.E = s.E - 1; s.Z = s.Z + 1;
     sim.E -= 1; sim.Z += 1;
 }
+function die(s, sim){
+    s.Z = s.Z - 1; s.R = s.R + 1;
+    sim.Z -= 1; sim.R += 1;
+}
 function kill(s, sim){
     s.Z = s.Z - 1; s.R = s.R + 1;
     sim.Z -= 1; sim.R += 1;
@@ -190,6 +194,7 @@ function Simulation(board){
     this.alpha = 1;
     this.mu = 1;
     this.eta = 2;
+    this.gamma = 0.2;
     this.beta = 1;
     this.Nfact = 1;
     this.time = 0;
@@ -248,7 +253,7 @@ Simulation.prototype = {
             weight = this.eta * this.sites[bond.s0].E;
         }
         if (bond.type == Z2R){
-            weight = this.alpha * this.sites[bond.s0].Z * this.sites[bond.s1].S;
+            weight = this.alpha * this.sites[bond.s0].Z * this.sites[bond.s1].S + this.gamma * this.sites[bond.s0].Z;
             weight *= (bond.s0 == bond.s1) ? 1 : this.mu;
         }
         if (bond.type == I2R) weight = this.alpha * this.sites[bond.s0].Z;
