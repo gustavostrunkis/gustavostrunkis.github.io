@@ -1,6 +1,7 @@
 var helptext = "Parameters:\n\n\
 \u03B1 - kill to bite ratio\n\
-\u03BC - time for zombie to walk 1 mile\n\n\
+\u03BC - time for zombie to walk 1 mile\n\
+\u03B3 - time for zombie to naturaly die\n\n\
 Controls:\n\n\
 Click on the map to place a new zombie, and use the controls on the left to \
 change parameters of the simulation. ";
@@ -144,6 +145,7 @@ ZombiesUI.prototype = {
 
         this.slider_alpha = new Slider("\u03B1", sleft+50, topp, 90, 0, 3);
         this.slider_mu    = new Slider("\u03BC", sleft+50, topp+25, 90, 1, 100);
+        this.slider_gamma = new Slider("\u03B3", sleft+50, topp+25, 90, 0, 100);
         this.slider_steps = new Slider("step/draw", sleft+50, topp+50, 90, 0, 2000);
 
         this.pauseButton.handler = this.bind(function (){ this.playpause(); });
@@ -154,10 +156,14 @@ ZombiesUI.prototype = {
             this.escapetime = val;
             this.sim.mu = 1.0/(this.escapetime*this.sim.beta*this.sim.Nfact);
         });
+        this.slider_gamma.handler = this.bind(function (val){
+            this.sim.gamma = 1.0/(val);
+        });
         var textbox = new TextBox(left+10, topp+180, width-10, height-topp-160, helptext, this.ctx);
 
         this.slider_alpha.value = this.sim.alpha;
         this.slider_mu.value = 11;
+        this.slider_gamma.value = this.sim.gamma;
         this.slider_steps.value = this.stepsper;
 
         this.uielem = []
@@ -168,6 +174,7 @@ ZombiesUI.prototype = {
         this.uielem.push(this.slider_alpha);
         this.uielem.push(this.slider_steps);
         this.uielem.push(this.slider_mu);
+        this.uielem.push(this.slider_gamma);
 
         for (var i=0; i<this.uielem.length; i++)
             this.uielem[i].hidden = !this.showcontrols;
@@ -303,9 +310,9 @@ ZombiesUI.prototype = {
         var i = site.x;
         var j = this.mapHmax-site.y;
         var ind = 4*(i+j*this.map.width);
-        this.overlay.data[ind+0] = Math.floor(255*(site.Z - site.R)/site.N*100);
+        this.overlay.data[ind+0] = Math.floor(255*site.Z/site.N*100);
         this.overlay.data[ind+1] = 0;
-        this.overlay.data[ind+2] = Math.floor(255*(site.R - site.Z)/site.N*100);
+        this.overlay.data[ind+2] = Math.floor(255*site.R/site.N*100);
         this.overlay.data[ind+3] = Math.floor(this.mapcopy.data[ind]*(site.N)/site.N);
     },
 }

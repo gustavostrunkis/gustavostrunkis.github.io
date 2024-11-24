@@ -194,7 +194,7 @@ function Simulation(board){
     this.alpha = 1;
     this.mu = 1;
     this.eta = 2;
-    this.gamma = 0.2;
+    this.gamma = 0.1;
     this.beta = 1;
     this.Nfact = 1;
     this.time = 0;
