@@ -312,7 +312,7 @@ ZombiesUI.prototype = {
         var ind = 4*(i+j*this.map.width);
         this.overlay.data[ind+0] = Math.floor(255*site.Z/site.N*100);
         this.overlay.data[ind+1] = 0;
-        this.overlay.data[ind+2] = Math.floor(255*site.R/site.N*100);
+        this.overlay.data[ind+2] = Math.floor(255*(site.R - site.Z)/site.N*100);
         this.overlay.data[ind+3] = Math.floor(this.mapcopy.data[ind]*(site.N)/site.N);
     },
 }
