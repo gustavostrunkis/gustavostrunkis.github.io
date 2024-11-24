@@ -1,7 +1,7 @@
 var helptext = "Parameters:\n\n\
 \u03B1 - kill to bite ratio\n\
 \u03BC - time for zombie to walk 1 mile\n\
-\u03B3 - time for zombie to naturaly die\n\n\
+\u03B3 - time for zombie to naturally die\n\n\
 Controls:\n\n\
 Click on the map to place a new zombie, and use the controls on the left to \
 change parameters of the simulation. ";
@@ -139,14 +139,14 @@ ZombiesUI.prototype = {
         var topp = 70;
         var container = new Container(left, topp-30, width, height);
         this.pauseButton = new Button("Pause (P)", left+width/2 - button_width/2,
-                topp+95, button_width, button_height);
+                topp+95+25, button_width, button_height);
         this.resetButton = new Button("Reset (Q)", left+width/2 - button_width/2,
-                topp+135, button_width, button_height);
+                topp+135+25, button_width, button_height);
 
         this.slider_alpha = new Slider("\u03B1", sleft+50, topp, 90, 0, 3);
         this.slider_mu    = new Slider("\u03BC", sleft+50, topp+25, 90, 1, 100);
-        this.slider_gamma = new Slider("\u03B3", sleft+50, topp+25, 90, 0, 100);
-        this.slider_steps = new Slider("step/draw", sleft+50, topp+50, 90, 0, 2000);
+        this.slider_gamma = new Slider("\u03B3", sleft+50, topp+50, 90, 0, 100);
+        this.slider_steps = new Slider("step/draw", sleft+50, topp+75, 90, 0, 2000);
 
         this.pauseButton.handler = this.bind(function (){ this.playpause(); });
         this.resetButton.handler = this.bind(function (){ this.reset(); });
@@ -159,7 +159,7 @@ ZombiesUI.prototype = {
         this.slider_gamma.handler = this.bind(function (val){
             this.sim.gamma = 1.0/(val);
         });
-        var textbox = new TextBox(left+10, topp+180, width-10, height-topp-160, helptext, this.ctx);
+        var textbox = new TextBox(left+10, topp+180+25, width-10, height-topp-160, helptext, this.ctx);
 
         this.slider_alpha.value = this.sim.alpha;
         this.slider_mu.value = 11;
