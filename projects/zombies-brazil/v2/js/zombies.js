@@ -163,7 +163,7 @@ ZombiesUI.prototype = {
 
         this.slider_alpha.value = this.sim.alpha;
         this.slider_mu.value = 11;
-        this.slider_gamma.value = this.sim.gamma;
+        this.slider_gamma.value = 1 / this.sim.gamma;
         this.slider_steps.value = this.stepsper;
 
         this.uielem = []
